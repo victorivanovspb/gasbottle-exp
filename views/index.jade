@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    script(type='text/javascript', src='/js/index-nav.js', charset='utf-8')
+    div(class='header')
+        div(class='line1')
+            span(class='b')= username
+            span &nbsp;
+            form(action='/logout' method='post')
+                input(type='submit' value='Выйти')
+        div(class='line2', id='navCmd')
+
+    div(class='data-container')
+        p Загрузка...

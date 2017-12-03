@@ -1,0 +1,20 @@
+{
+  "nav-menu" : [
+    {
+      "id" : "home",
+      "title": "/"
+    },
+    {
+      "id" : "sale",
+      "title": "Продажа"
+    },
+    {
+      "id" : "refill",
+      "title": "Заправка"
+    },
+    {
+      "id" : "exchange",
+      "title": "Обмен"
+    }
+  ]
+}

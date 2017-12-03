@@ -1,0 +1,20 @@
+{
+  "nav-menu" : [
+    {
+      "id" : "home",
+      "title": "/"
+    },
+    {
+      "id" : "places",
+      "title": "Точки"
+    },
+    {
+      "id" : "operators",
+      "title": "Операторы"
+    },
+    {
+      "id" : "administrators",
+      "title": "Админы"
+    }
+  ]
+}

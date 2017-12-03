@@ -1,0 +1,92 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+}
+
+form.login {
+    background: #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+}
+
+form.login div label {
+    display: inline-block;
+    width: 120px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    text-align:right;
+}
+
+form.login div.btn {
+    text-align: right;
+}
+
+span.b {
+    font-weight: bold;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* background: #eee; */
+    /* background: rgba(51, 155, 177, 0.86); */
+    /* background: -moz-linear-gradient(top, #585858, #2B2B2B); */
+    background: -webkit-linear-gradient(top, #DDD, #CBCBCB);
+    background: -moz-linear-gradient(top, #DDD, #CBCBCB);
+    background: -o-linear-gradient(top, #DDD, #CBCBCB);
+    background: -ms-linear-gradient(top, #DDD, #CBCBCB);
+    background: linear-gradient(top, #DDD, #CBCBCB);
+}
+
+.header .line1 {
+    height: 30px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.header .line1 form {
+    display: inline-block;
+}
+
+.header .line2 {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    height: 35px;
+}
+
+.header .line2 span {
+    border: 1px solid #bbb;
+    background: #eee;
+
+    margin-right: 5px;
+    padding-top: 8px;
+    padding-left: 8px;
+    -webkit-flex-basis: 180px;
+    flex-basis: 180px;
+
+    font-size: 0.8em;
+}
+.header .line2 span:first-child {
+    -webkit-flex-basis: 70px;
+    flex-basis: 70px;
+}
+
+.header .line2 span:hover {
+    background: rgba(94, 185, 255, 0.77);
+    cursor: pointer;
+}
+
+.data-container {
+    margin-top: 80px;
+    padding-left: 10px;
+}
+
+.err-msg {
+    text-align: center;
+    color: red;
+}
+

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    a(href='/' style='padding-top: 5px; padding-left: 5px;') ///
+    span(style='padding-left: 5px;') Login
+    form(action='/login' id='loginA' class='login' method='post')
+        div
+            label Логин
+            input(type='text' name='username')
+        div
+            label Пароль
+            input(type='text' name='password')
+        div(class='btn')
+            input(type='submit' value='Войти')
+        div(class='err-msg')
+            span= msg
