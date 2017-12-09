@@ -3,7 +3,7 @@
 let fs = require('fs');
 
 function check_user(user, pass, callback) {
-    let file = './db/test.db';
+    let file = './bin/test.db';
     let exists = fs.existsSync(file);
 
     if (exists) {

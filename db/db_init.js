@@ -5,7 +5,7 @@ let sqlite3 = require('sqlite3').verbose();
 
 class Db {
     constructor() {
-        this.file = './db/test.db';
+        this.file = './bin/test.db';
         this.exists = fs.existsSync(this.file);
     }
 

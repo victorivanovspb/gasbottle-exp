@@ -13,7 +13,7 @@ const routes_api = require('./routes/api/index');
 const routes_api_login = require('./routes/api/login');
 const routes_api_menu = require('./routes/api/menu');
 
-const db = new (require('./db_init.js')).Db();
+const db = new (require('./db/db_init.js')).Db();
 routes.common.db = db;
 routes_api.common.db = db;
 routes_api_login.common.db = db;

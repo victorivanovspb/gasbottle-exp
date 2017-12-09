@@ -1,7 +1,7 @@
 'use strict';
 
 let fs = require('fs');
-let file = './db/test.db';
+let file = './bin/test.db';
 let exists = fs.existsSync(file);
 
 if (exists) {
