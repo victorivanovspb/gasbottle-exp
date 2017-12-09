@@ -1,31 +1,22 @@
 const path = require('path');
 const readFile = require('fs-readfile-promise');
 
-let express = require('express');
-let router = express.Router();
-
+const express = require('express');
+const router = express.Router();
+const session = require('../../session');
 const common = {};
 
-router.post('/nav-menu', function(req, res, next) {
-    console.log('router post /api' + req.url);
-
-    let promise = new Promise((resolve, reject) => {
-        let sess = req.session;
-        if (sess.ok && sess.ok === true) {
-            resolve(sess);
-        } else {
-            reject('no session');
-        }
-    });
+/*
+router.post('/nav-menu', function(request, response, next) {
+    const promise = session.getPromise(request);
     promise
-        .then((sess) => {
+        .then((session) => {
             return new Promise((resolve, reject) => {
-                common.db.get_user(sess.user, resolve);
+                common.db.get_user(session.user, resolve);
             });
         })
         .then((answer) => {
             if (answer.state) {
-                //console.log('get_user=' + answer.user.login);
                 switch (answer.user.role) {
                     case 1: // administrator
                         return readFile(path.resolve( __dirname, '../json/nav-menu-administrator.json')); // promise
@@ -38,27 +29,20 @@ router.post('/nav-menu', function(req, res, next) {
             let result = JSON.parse(data);
             result['current-page'] = 'home';
             result['state'] = true;
-            res.send(JSON.stringify(result));
+            response.send(JSON.stringify(result));
         })
         .catch(() => {
-            res.send(JSON.stringify({
+            response.send(JSON.stringify({
                 'state' : false
             }));
         });
 });
+*/
 
 router.post('/page-content', function(req, res, next) {
     const pageId = JSON.parse(req.body.jsonData)['pageId'];
     console.log('router post /api' + req.url + ' ' + pageId);
-
-    let promise = new Promise((resolve, reject) => {
-        const sess = req.session;
-        if (sess.ok && sess.ok === true) {
-            resolve(sess);
-        } else {
-            reject('no session');
-        }
-    });
+    const promise = session.getPromise(request);
     promise
         .then((sess) => {
             return new Promise((resolve, reject) => {

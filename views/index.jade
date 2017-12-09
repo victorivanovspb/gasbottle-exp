@@ -1,14 +1,15 @@
 extends layout
 
 block content
-    script(type='text/javascript', src='/js/index-nav.js', charset='utf-8')
+    script(type='text/javascript', src='/js/blocks.js', charset='utf-8')
+    script(type='text/javascript', src='/js/main.js', charset='utf-8')
     div(class='header')
         div(class='line1')
             span(class='b')= username
             span &nbsp;
             form(action='/logout' method='post')
                 input(type='submit' value='Выйти')
-        div(class='line2', id='navCmd')
+        div(class='line2', id='navigationMenu')
 
-    div(class='data-container')
+    div(class='data-container' id='dataContent')
         p Загрузка...

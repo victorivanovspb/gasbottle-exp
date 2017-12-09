@@ -1,20 +1,23 @@
 {
-  "nav-menu" : [
+  "state" : true,
+  "menu-items" : [
     {
       "id" : "home",
       "title": "/"
     },
     {
-      "id" : "places",
+      "id" : "plc",
       "title": "Точки"
     },
     {
-      "id" : "operators",
+      "id" : "opr",
       "title": "Операторы"
     },
     {
-      "id" : "administrators",
+      "id" : "adm",
       "title": "Админы"
     }
-  ]
+  ],
+  "current-item" : "home",
+  "api" : "/api/page/administrator"
 }

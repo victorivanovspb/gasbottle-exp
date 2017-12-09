@@ -23,6 +23,40 @@ form.login div.btn {
     text-align: right;
 }
 
+div.login {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+div.login a {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+div.login span {
+    padding-left: 5px;
+}
+
+div.form {
+    margin-top: 5px;
+    background: #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+}
+
+div.form div label {
+    display: inline-block;
+    width: 120px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    text-align:right;
+}
+
+div.form div.btn {
+    text-align: right;
+}
+
 span.b {
     font-weight: bold;
 }

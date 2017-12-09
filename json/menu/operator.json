@@ -1,5 +1,6 @@
 {
-  "nav-menu" : [
+  "state" : true,
+  "menu-items" : [
     {
       "id" : "home",
       "title": "/"
@@ -9,12 +10,14 @@
       "title": "Продажа"
     },
     {
-      "id" : "refill",
+      "id" : "refl",
       "title": "Заправка"
     },
     {
-      "id" : "exchange",
+      "id" : "exch",
       "title": "Обмен"
     }
-  ]
+  ],
+  "current-item" : "home",
+  "api" : "/api/page/operator"
 }

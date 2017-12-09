@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    script(type='text/javascript', src='/js/tmp.js', charset='utf-8')
+    div(class='header')
+        div(class='line1')
+            span(class='b')= username
+            span &nbsp;
+            span(id='whoami', style='width: 200px; border: 1px solid gray;') Whoami
+        div(class='line2', id='navCmd')
+
+    div(class='data-container')
+        p ...
