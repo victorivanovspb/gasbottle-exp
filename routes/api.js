@@ -6,39 +6,6 @@ const router = express.Router();
 const session = require('../../session');
 const common = {};
 
-/*
-router.post('/nav-menu', function(request, response, next) {
-    const promise = session.getPromise(request);
-    promise
-        .then((session) => {
-            return new Promise((resolve, reject) => {
-                common.db.get_user(session.user, resolve);
-            });
-        })
-        .then((answer) => {
-            if (answer.state) {
-                switch (answer.user.role) {
-                    case 1: // administrator
-                        return readFile(path.resolve( __dirname, '../json/nav-menu-administrator.json')); // promise
-                    case 2: // operator
-                        return readFile(path.resolve( __dirname, '../json/nav-menu-operator.json')); // promise
-                }
-            }
-        })
-        .then((data) => {
-            let result = JSON.parse(data);
-            result['current-page'] = 'home';
-            result['state'] = true;
-            response.send(JSON.stringify(result));
-        })
-        .catch(() => {
-            response.send(JSON.stringify({
-                'state' : false
-            }));
-        });
-});
-*/
-
 router.post('/page-content', function(req, res, next) {
     const pageId = JSON.parse(req.body.jsonData)['pageId'];
     console.log('router post /api' + req.url + ' ' + pageId);

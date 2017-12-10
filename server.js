@@ -8,16 +8,16 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
-const routes = require('./routes/index');
-const routes_api = require('./routes/api/index');
-const routes_api_login = require('./routes/api/login');
-const routes_api_menu = require('./routes/api/menu');
+const routes = {};
+routes['index'] = require('./routes/index');
+routes['api_index'] = require('./routes/api/index');
+routes['api_login'] = require('./routes/api/login');
+routes['api_menu'] = require('./routes/api/menu');
 
 const db = new (require('./db/db_init.js')).Db();
-routes.common.db = db;
-routes_api.common.db = db;
-routes_api_login.common.db = db;
-routes_api_menu.common.db = db;
+for (let key in routes) {
+    routes[key].common.db = db;
+}
 
 const app = express(); // express.createServer() is deprecated
 const port = 8181;
@@ -45,10 +45,10 @@ app.set('view options', { layout: false });
 
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/',    routes);
-app.use('/api', routes_api);
-app.use('/api', routes_api_login);
-app.use('/api', routes_api_menu);
+app.use('/',    routes['index']);
+app.use('/api', routes['api_index']);
+app.use('/api', routes['api_login']);
+app.use('/api', routes['api_menu']);
 
 app.listen(port);
 console.log('Node listening on port %s', port);

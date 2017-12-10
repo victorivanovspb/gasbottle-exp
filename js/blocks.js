@@ -15,8 +15,6 @@ class Block {
                 this.menu
                     .click(data['current-item']);
             });
-
-        //this.menu
     }
     static loadMenu(success) {
         $.ajax({
@@ -49,22 +47,18 @@ class Menu {
         this.$content = $content;
         this.menuSel = {};
         menuItems.forEach((item) => {
-            /*
-            this.$menu.append(`<span id=${item.id}>${item.title}</span>`);
-            this.menuSel[item.id] = this.$menu.find(`#${item.id}`); // ?????????????
-            */
-            this.menuSel[item.id] = $(`<span id=${item.id}>${item.title}</span>`).appendTo(this.$menu); //.effects(...);
-            //this.menuSel[item.id].html('bla-bla-bla'); //click(`console.log(123)`);
-
+            this.menuSel[item.id] = $(`<span id=${item.id}>${item.title}</span>`)
+                .click(() => {
+                    let id = item.id;
+                    console.log(id);
+                })
+                .appendTo(this.$menu);
         });
-        this.menuSel['opr']
-            .html('home click')
-            .click(`console.log(123)`);
     }
 
     click(itemId) {
         console.log('menu click id=' + itemId);
-
+        this.menuSel[itemId].click();
         this.$content.html('clicked id=' + itemId);
     }
 }

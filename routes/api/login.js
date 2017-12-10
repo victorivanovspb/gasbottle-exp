@@ -23,14 +23,13 @@ router.post('/login', (request, response, next) => {
         })
         .then((dbResponse) => {
             if (dbResponse.checked) {
-                request.session.ok = true; //request.body['jsonData[username]'] === ;
+                request.session.ok = true;
                 request.session.user = request.body['jsonData[username]'];
                 console.log(request.session);
                 response.send(JSON.stringify({
                     "state"   : true,
                     "session" : true
                 }));
-                //response.redirect('/');
             } else {
                 return new Promise((resolve, reject) => {
                     reject('Неправильный логин и пароль');
@@ -43,7 +42,6 @@ router.post('/login', (request, response, next) => {
                 "session" : false,
                 "message" : message
             }));
-            //res.render('login', {msg: message});
         });
 });
 

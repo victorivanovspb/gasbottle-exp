@@ -1,7 +1,6 @@
 'use strict';
 
 $( document ).ready(() => {
-    console.log('tmp');
     $( '#whoami' ).click(() => {
         $.ajax({
             type: 'POST',

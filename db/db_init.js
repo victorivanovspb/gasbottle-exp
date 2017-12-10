@@ -1,11 +1,12 @@
 'use strict';
 
-let fs = require('fs');
-let sqlite3 = require('sqlite3').verbose();
+const fs = require('fs');
+const sqlite3 = require('sqlite3').verbose();
+const path = require('path');
 
 class Db {
     constructor() {
-        this.file = './bin/test.db';
+        this.file = path.resolve( __dirname, './bin/test.db');
         this.exists = fs.existsSync(this.file);
     }
 
